@@ -17,6 +17,7 @@ const Streams = () => {
       
       let baseUrl = 'https://api.twitch.tv/helix/games?';
       let queryParams = '';
+
       gameIds.map(id => {
         return (queryParams = queryParams + `id=${id}&`);
       });
@@ -30,9 +31,11 @@ const Streams = () => {
       let finalArray = dataArray.map(stream => {
         stream.gameName = '';
         gameNameArray.map(name => {
+          // Replace with a forEach to disregard the need for return?
           if (stream.game_id === name.id) {
             return stream.gameName = name.name;
           }
+          return;
         });
       
         let newUrl = stream.thumbnail_url

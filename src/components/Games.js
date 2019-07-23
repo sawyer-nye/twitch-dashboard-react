@@ -30,7 +30,7 @@ const Games = () => {
         {games.map(game => (
           <div className='col-lg-3 col-md-4 col-sm-6 mt-5' key={game.id}>
             <div className='card'>
-              <img className='card-img-top' src={game.box_art_url} />
+              <img className='card-img-top' src={game.box_art_url} alt={game.name}/>
                 <div className='card-body'>
                   <h5 className='card-title'>{game.name}</h5>
                   <button className='btn btn-success'>

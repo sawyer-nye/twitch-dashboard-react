@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 
 import Games from './components/Games';
@@ -15,10 +15,12 @@ const App = () => {
 
   return (
     <Router>
-      <Header />
-      <Route exact path='/' component={Games} />
-      <Route exact path='/top-streams' component={Streams} />
-      <Route exact path='/game/:id' component={GameStreams} />
+      <div className='App container-fluid'>
+        <Header />
+        <Route exact path='/' component={Games} />
+        <Route exact path='/top-streams' component={Streams} />
+        <Route exact path='/game/:id' component={GameStreams} />
+      </div>
     </Router>
   );
 }

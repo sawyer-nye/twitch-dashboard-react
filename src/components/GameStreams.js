@@ -40,7 +40,7 @@ const GameStreams = ({ match, location }) => {
         {streamData.map(stream => (
           <div className='col-lg-3 col-md-4 col-sm-6 mt-5' key={stream.id}>
             <div className='card'>
-              <img className='card-img-top' src={stream.thumbnail_url} />
+              <img className='card-img-top' src={stream.thumbnail_url} alt={stream.user_name}/>
               <div className='card-body'>
                 <h5 className='card-title'>{stream.user_name}</h5>
                 <div className='card-text'>
