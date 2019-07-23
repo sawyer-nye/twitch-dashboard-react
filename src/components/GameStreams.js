@@ -26,7 +26,9 @@ const GameStreams = ({ match, location }) => {
     }
 
     fetchData();
-  }, [])
+  }, []);
+
+  //console.log('data: ', streamData);
 
   return (
     <div>
@@ -36,7 +38,7 @@ const GameStreams = ({ match, location }) => {
       </h3>
       <div className='row'>
         {streamData.map(stream => (
-          <div className='col-1g-4 col-md-6 col-sm-12 mt-5'>
+          <div className='col-lg-3 col-md-4 col-sm-6 mt-5' key={stream.id}>
             <div className='card'>
               <img className='card-img-top' src={stream.thumbnail_url} />
               <div className='card-body'>

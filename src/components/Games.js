@@ -28,27 +28,27 @@ const Games = () => {
       <h1>Most Popular Games</h1>
       <div className='row'>
         {games.map(game => (
-            <div className='col-1g-4 col-md-6 col-sm-12 mt-5'>
-              <div className='card'>
-                <img className='card-img-top' src={game.box_art_url} />
-                  <div className='card-body'>
-                    <h5 className='card-title'>{game.name}</h5>
-                    <button className='btn btn-success'>
-                      <Link
-                        className='link'
-                        to={{
-                          pathname: 'game/' + game.name,
-                          state: {
-                            gameId: game.id
-                          }
-                        }}
-                      >
-                        {game.name} streams{' '}
-                      </Link>
-                    </button>
-                  </div>
-              </div>
+          <div className='col-lg-3 col-md-4 col-sm-6 mt-5' key={game.id}>
+            <div className='card'>
+              <img className='card-img-top' src={game.box_art_url} />
+                <div className='card-body'>
+                  <h5 className='card-title'>{game.name}</h5>
+                  <button className='btn btn-success'>
+                    <Link
+                      className='link'
+                      to={{
+                        pathname: 'game/' + game.name,
+                        state: {
+                          gameId: game.id
+                        }
+                      }}
+                    >
+                      {game.name} streams{' '}
+                    </Link>
+                  </button>
+                </div>
             </div>
+          </div>
           ))}
         </div>
       </div>
